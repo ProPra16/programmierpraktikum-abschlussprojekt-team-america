@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="java">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$USER_HOME$/Downloads/virtual-kata-lib-master/src/main/java" />
+      <root url="file://$USER_HOME$/Downloads/virtual-kata-lib-master/src/test/java" />
+    </SOURCES>
+  </library>
+</component>
