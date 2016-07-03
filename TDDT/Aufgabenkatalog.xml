@@ -1,0 +1,42 @@
+<excercises>
+	<excercise name = "Roemische Zahlen">
+		<description> Konvertiert roemische in arabische Zahlen.</description>
+	<classes>
+		<class name="RomanNumberConverter">
+			public class RomanNumberConverter {
+		}
+		</class>
+	</classes>
+	<tests>
+		<test name="RomanNumberConverterTest">
+			import static org.junit.Assert.*;
+			import org.junit.Test;
+			public class RomanNumbersTest {
+				@Test
+				public void testSomething() {
+				}
+			}
+		</test>
+	</tests>
+	</excercise>
+		<excercise name = "Zweite Aufgabe">
+		<description> Konvertiert roemische in arabische Zahlen.</description>
+	<classes>
+		<class name="RomanNumberConverter">
+			public class RomanNumberConverter {
+		}
+		</class>
+	</classes>
+	<tests>
+		<test name="RomanNumberConverterTest">
+			import static org.junit.Assert.*;
+			import org.junit.Test;
+			public class RomanNumbersTest {
+				@Test
+				public void testSomething() {
+				}
+			}
+		</test>
+	</tests>
+	</excercise>
+</excercises>
