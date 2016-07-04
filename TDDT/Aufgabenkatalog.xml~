@@ -3,7 +3,7 @@
 		<description> Konvertiert roemische in arabische Zahlen.</description>
 	<classes>  
 		<class name="RomanNumberConverter">
-/*Konvertiere roemische Zahlen in arabische Zahlen!
+/*Konvertiere roemische Zahlen in arabische Zahlen
 */
 
 public class RomanNumberConverter {
