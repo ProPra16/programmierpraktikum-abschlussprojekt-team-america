@@ -28,6 +28,8 @@ public class Main extends Application {
     public static TextArea testtxt;
     public static TextArea classtxt;
     public static ComboBox<String> Katalog;
+    public static XMLKatalog aufgaben;
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         fenster=primaryStage;
@@ -44,10 +46,25 @@ public class Main extends Application {
             classtxt=new TextArea();
             classtxt.setPrefColumnCount(75);
             classtxt.setPrefRowCount(30);
-        String a="a";
-        String b="b";                       //xml -titel- laden
+
+        //lade den Katalog
+        this.aufgaben = new XMLKatalog("Aufgabenkatalog.xml");
+
+        //xml -titel- laden
+        ArrayList<String> aufgabenTitel = aufgaben.getTitles();
         Katalog=new ComboBox<String>();
-        Katalog.getItems().addAll(a,b);
+        Katalog.getItems().addAll(aufgabenTitel);
+
+        Katalog.setOnAction(e ->{
+            int aktuelleAufgabe = aufgaben.findeEintragnummer(Katalog.getValue());
+            String testDateiname = aufgaben.erstelleJava(true, aktuelleAufgabe);
+            String klasseDateiname = aufgaben.erstelleJava(false, aktuelleAufgabe);
+            LoadnSave.load(testDateiname, testtxt, false);
+            LoadnSave.load(klasseDateiname, classtxt, false);
+            //System.out.println(aktuelleAufgabe);
+
+        });
+
         HBox h1=new HBox(20);
         HBox h2=new HBox(20);
         h1.getChildren().addAll(classtxt,Katalog,testtxt);

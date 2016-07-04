@@ -45,5 +45,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="virtual-kata-lib-1.0.1" level="project" />
+    <orderEntry type="library" name="jdom2-2.0.6" level="project" />
   </component>
 </module>

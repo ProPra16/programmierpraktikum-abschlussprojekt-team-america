@@ -46,16 +46,56 @@ public class XMLKatalog {
     }
 
 
+    //
+    public String erstelleJava(boolean isATest, int aufgabennummer) {
+        //aufgabennummer = aufgabennummer-1;
+        Element WurzelElement = this.dokument.getRootElement();
+        List aufgaben = WurzelElement.getChildren("excercise");
+        if (isATest){
+            Element tmp = (Element) aufgaben.get(aufgabennummer);
+            Element tmp2 = tmp.getChild("tests");
+            String filename = tmp2.getChild("test").getAttributeValue("name");
+            LoadnSave.save(filename, tmp2.getValue(), false);
+            //System.out.println(tmp2.getChild("test").getAttributeValue("name"));
+            //System.out.println(tmp2.getValue());
+            return filename;
+        }
+        else{
+            Element tmp = (Element) aufgaben.get(aufgabennummer);
+            Element tmp2 = tmp.getChild("classes");
+            String filename = tmp2.getChild("class").getAttributeValue("name");
+            LoadnSave.save(filename, tmp2.getValue(), false);
+            return filename;
+        }
 
-
-
-
-
-
-
-    public static void main(String[] args) throws JDOMException, IOException {
-        XMLKatalog test = new XMLKatalog("Aufgabenkatalog.xml");
-        //test.getTitles();
     }
+
+    public int findeEintragnummer(String titel){
+        int nummer = -1;
+        String tmp ="";
+        ArrayList<String> tmpList = this.getTitles();
+        for(int i = 0; i<tmpList.size(); i++){
+            tmp = tmpList.get(i);
+            if(tmp.equals(titel)) nummer = i;
+        }
+        return nummer;
+    }
+
+
+
+
+
+
+
+
+
+
+/*    public static void main(String[] args) throws JDOMException, IOException {
+        XMLKatalog test = new XMLKatalog("Aufgabenkatalog.xml");
+        ArrayList<String> names = test.getTitles();
+        for(int i=0; i<names.size(); i++){
+            System.out.println(names.get(i));
+        }
+    }*/
 
 }
