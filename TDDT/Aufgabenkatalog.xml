@@ -23,7 +23,7 @@ public class RomanNumberConverterTest {
 		</test>
 	</tests>
 	</excercise>
-		<excercise name = "Zweite Aufgabe">
+		<excercise name = "Zweite Aufgabe!">
 		<description> Konvertiert roemische in arabische Zahlen.</description>
 	<classes>
 		<class name="RomanNumberConverter">
