@@ -1,7 +1,3 @@
-//hierfür wird jdom2 benötigt (siehe Maven)
-
-//package sample;
-
 
 import org.jdom2.Document;
 import org.jdom2.Element;
@@ -10,7 +6,10 @@ import org.jdom2.input.SAXBuilder;
 import org.jdom2.output.XMLOutputter;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.FileAlreadyExistsException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,23 +47,35 @@ public class XMLKatalog {
 
     //
     public String erstelleJava(boolean isATest, int aufgabennummer) {
-        //aufgabennummer = aufgabennummer-1;
+
         Element WurzelElement = this.dokument.getRootElement();
         List aufgaben = WurzelElement.getChildren("excercise");
         if (isATest){
             Element tmp = (Element) aufgaben.get(aufgabennummer);
             Element tmp2 = tmp.getChild("tests");
             String filename = tmp2.getChild("test").getAttributeValue("name");
-            LoadnSave.save(filename, tmp2.getValue(), false);
-            //System.out.println(tmp2.getChild("test").getAttributeValue("name"));
-            //System.out.println(tmp2.getValue());
+
+            //Abfrage, ob File schon existiert
+            try {
+                FileInputStream file = new FileInputStream("TestsNClasses/" + filename + ".java");
+            } catch (FileNotFoundException e) {
+                LoadnSave.save(filename, tmp2.getValue(), false);
+            }
             return filename;
         }
         else{
             Element tmp = (Element) aufgaben.get(aufgabennummer);
             Element tmp2 = tmp.getChild("classes");
             String filename = tmp2.getChild("class").getAttributeValue("name");
-            LoadnSave.save(filename, tmp2.getValue(), false);
+
+            //Abfrage, ob File schon existiert
+            try {
+                FileInputStream file = new FileInputStream("TestsNClasses/" + filename + ".java");
+            } catch (FileNotFoundException e) {
+                LoadnSave.save(filename, tmp2.getValue(), false);
+            }
+
+            //LoadnSave.save(filename, tmp2.getValue(), false);
             return filename;
         }
 

@@ -1,4 +1,4 @@
-//package sample;
+
 import javafx.application.Application;
 import javafx.beans.InvalidationListener;
 import javafx.collections.ListChangeListener;
@@ -29,6 +29,7 @@ public class Main extends Application {
     public static TextArea classtxt;
     public static ComboBox<String> Katalog;
     public static XMLKatalog aufgaben;
+    public static String klasseDateiname = "";
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -57,8 +58,9 @@ public class Main extends Application {
 
         Katalog.setOnAction(e ->{
             int aktuelleAufgabe = aufgaben.findeEintragnummer(Katalog.getValue());
+            //System.out.println(aktuelleAufgabe);
             String testDateiname = aufgaben.erstelleJava(true, aktuelleAufgabe);
-            String klasseDateiname = aufgaben.erstelleJava(false, aktuelleAufgabe);
+            klasseDateiname = aufgaben.erstelleJava(false, aktuelleAufgabe);
             LoadnSave.load(testDateiname, testtxt, false);
             LoadnSave.load(klasseDateiname, classtxt, false);
             //System.out.println(aktuelleAufgabe);
@@ -76,10 +78,14 @@ public class Main extends Application {
 
 
         compile.setOnAction(e->{String klasse=classtxt.getText();String testo=testtxt.getText();compillll(klasse,testo);});
-        saveclass.setOnAction(e->LoadnSave.save("DNA",classtxt.getText(),false));
-        loadclass.setOnAction(e->LoadnSave.load("DNA",classtxt,false));
-        savetest.setOnAction(e->LoadnSave.save("DNA",testtxt.getText(),true));
-        loadtest.setOnAction(e->LoadnSave.load("DNA",testtxt,true));
+        saveclass.setOnAction(e->LoadnSave.save(klasseDateiname,classtxt.getText(),false));
+        loadclass.setOnAction(e->{
+            System.out.println(klasseDateiname);
+            LoadnSave.load(klasseDateiname,classtxt,false);
+        });
+
+        savetest.setOnAction(e->LoadnSave.save(klasseDateiname,testtxt.getText(),true));
+        loadtest.setOnAction(e->LoadnSave.load(klasseDateiname,testtxt,true));
     }
 
 

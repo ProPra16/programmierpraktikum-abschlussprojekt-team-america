@@ -27,13 +27,13 @@ public class RomanNumberConverterTest {
 		<excercise name = "Zweite Aufgabe!">
 		<description> Konvertiert roemische in arabische Zahlen.</description>
 	<classes>
-		<class name="RomanNumberConverter">
+		<class name="ZweiteAufgabe">
 public class RomanNumberConverter {
 }
 		</class>
 	</classes>
 	<tests>
-		<test name="RomanNumberConverterTest">
+		<test name="ZweiteAufgabeTest">
 import static org.junit.Assert.*;
 import org.junit.Test;
 public class RomanNumberConverterTest {
