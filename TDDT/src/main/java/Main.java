@@ -42,10 +42,10 @@ public class Main extends Application {
                 Button savetest=new Button("Test Speichern");
                 Button loadtest=new Button("Laden");
         testtxt=new TextArea();
-        testtxt.setPrefColumnCount(75);
+        testtxt.setPrefColumnCount(50);
         testtxt.setPrefRowCount(30);
             classtxt=new TextArea();
-            classtxt.setPrefColumnCount(75);
+            classtxt.setPrefColumnCount(50);
             classtxt.setPrefRowCount(30);
 
         //lade den Katalog
@@ -54,6 +54,7 @@ public class Main extends Application {
         //xml -titel- laden
         ArrayList<String> aufgabenTitel = aufgaben.getTitles();
         Katalog=new ComboBox<String>();
+        Katalog.setPromptText("Aufgaben");
         Katalog.getItems().addAll(aufgabenTitel);
 
         Katalog.setOnAction(e ->{

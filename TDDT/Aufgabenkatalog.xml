@@ -12,35 +12,44 @@ public class RomanNumberConverter {
 	</classes>
 	<tests>
 		<test name="RomanNumberConverterTest">
+/*Hier wird der Test geschrieben
+*/
+
 import static org.junit.Assert.*;
 import org.junit.Test;
-//Test!
+
 public class RomanNumberConverterTest {
 	@Test
 	public void testSomething() {
-
 	}
 }
 		</test>
 	</tests>
 	</excercise>
 		<excercise name = "Zweite Aufgabe!">
-		<description> Konvertiert roemische in arabische Zahlen.</description>
+		<description> Diese ist eure zweite Aufgabe.</description>
 	<classes>
 		<class name="ZweiteAufgabe">
-public class RomanNumberConverter {
+/*Code für die zweite Aufgabe!
+*/
+
+public class ZweiteAufgabe {
 }
 		</class>
 	</classes>
 	<tests>
 		<test name="ZweiteAufgabeTest">
+/*Test für die zweite Aufgabe
+*/
+
 import static org.junit.Assert.*;
 import org.junit.Test;
-public class RomanNumberConverterTest {
+
+public class ZweiteAufgabeTest {
 	@Test
 	public void testSomething() {
+		}
 	}
-}
 		</test>
 	</tests>
 	</excercise>

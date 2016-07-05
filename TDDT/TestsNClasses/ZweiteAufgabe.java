@@ -1,6 +1,9 @@
 
 		
-public class RomanNumberConverter {
+/*Code für die zweite Aufgabe!
+*/
+
+public class ZweiteAufgabe {
 }
 		
 	
