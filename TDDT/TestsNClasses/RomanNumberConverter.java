@@ -1,6 +1,6 @@
   
 		
-/*Konvertiere roemische Zahlen in arabische Zahlen
+/*Konvertiere roemische Zahlen in arabische Zahlen!
 */
 
 public class RomanNumberConverter {
