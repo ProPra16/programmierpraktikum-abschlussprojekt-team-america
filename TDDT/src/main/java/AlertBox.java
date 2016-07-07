@@ -1,6 +1,6 @@
 //so oder so aehnlich in einem YT-Tutorial gesehen
 
-package sample;
+//package sample;
 
 
 import javafx.geometry.Pos;
