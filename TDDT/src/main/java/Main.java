@@ -21,6 +21,8 @@ import vk.core.api.*;
 import vk.core.internal.InternalCompiler;
 import vk.core.internal.InternalResult;
 
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Main extends Application {
@@ -36,7 +38,10 @@ public class Main extends Application {
     public static Button Gruen;
     public static Button refactor;
     public static Label state;
-
+    public static long testZeit;
+    public static long klasseZeit;
+    public static long stopper;
+    public static long differenz;
     @Override
     public void start(Stage primaryStage) throws Exception{
         fenster=primaryStage;
@@ -100,6 +105,10 @@ public class Main extends Application {
         fenster.show();
 
         loadaufgabe.setOnAction(e->{
+            klasseZeit = 0;
+            testZeit = 0;
+            stopper = System.currentTimeMillis();
+
             int aktuelleAufgabe = aufgaben.findeEintragnummer(Katalog.getValue());
             String testDateiname = aufgaben.erstelleJava(true, aktuelleAufgabe);
             klasseDateiname = aufgaben.erstelleJava(false, aktuelleAufgabe);
@@ -110,7 +119,13 @@ public class Main extends Application {
             loadaufgabe.setDisable(true);
 
         });
-        compile.setOnAction(e->{String klasse=classtxt.getText();String testo=testtxt.getText();compillll(klasse,testo);});
+        compile.setOnAction(e->{String klasse=classtxt.getText();String testo=testtxt.getText();
+            try {
+                compillll(klasse,testo);
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        });
         saveclass.setOnAction(e->LoadnSave.save(klasseDateiname,classtxt.getText(),false));
         loadclass.setOnAction(e->{System.out.println(klasseDateiname);LoadnSave.load(klasseDateiname,classtxt,false);});
         savetest.setOnAction(e->LoadnSave.save(klasseDateiname,testtxt.getText(),true));
@@ -150,7 +165,7 @@ public class Main extends Application {
 
 
 
-    public  void compillll(String klasse, String test){
+    public  void compillll(String klasse, String test) throws IOException {
         CompilationUnit b=new CompilationUnit(klasseDateiname,klasse,false);
         CompilationUnit c=new CompilationUnit(klasseDateiname+"Test",test,true);
         String output="";
@@ -189,6 +204,24 @@ public class Main extends Application {
             AlertBox.display("CompilerFehler", refactorerror(cs, comres));
         }
 
+        Tracking.schreibeLog(klasseDateiname, output+refactorerror(cs, comres), testtxt);
+
+        if(testtxt.isDisabled()){
+            differenz = System.currentTimeMillis()-stopper;
+            stopper = System.currentTimeMillis();
+            klasseZeit = klasseZeit+differenz;
+            //System.out.println(klasseZeit);
+
+        }
+        else{
+            differenz = System.currentTimeMillis()-stopper;
+            stopper = System.currentTimeMillis();
+            testZeit = testZeit+differenz;
+            //System.out.println(testZeit);
+
+        }
+
+        Tracking.zeichneDiagramm(testZeit, klasseZeit);
 
 
     }
