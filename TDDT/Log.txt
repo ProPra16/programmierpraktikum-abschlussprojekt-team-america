@@ -1,0 +1,80 @@
+14:20:51Test geändert
+Anzahl Erfolgreiche Tests: 0
+Anzahl Fehlgeschlagen Tests: 1
+Welche Tests sind Fehlgeschlagen: testSomething14:21:00Klasse geändert
+';' expected14:26:20 (Test geändert) 
+Anzahl Erfolgreiche Tests: 0
+Anzahl Fehlgeschlagen Tests: 1
+Welche Tests sind Fehlgeschlagen: testSomething
+14:26:30 (Klasse geändert) 
+Anzahl Erfolgreiche Tests: 1
+Anzahl Fehlgeschlagen Tests: 0
+15:41:33 (Test geändert) 
+Anzahl Erfolgreiche Tests: 0
+Anzahl Fehlgeschlagen Tests: 1
+Welche Tests sind Fehlgeschlagen: testSomething
+15:42:53 (Test geändert) 
+Anzahl Erfolgreiche Tests: 0
+Anzahl Fehlgeschlagen Tests: 1
+Welche Tests sind Fehlgeschlagen: testSomething
+15:44:25 (Test geändert) 
+Anzahl Erfolgreiche Tests: 0
+Anzahl Fehlgeschlagen Tests: 1
+Welche Tests sind Fehlgeschlagen: testSomething
+15:44:38 (Test geändert) 
+Anzahl Erfolgreiche Tests: 0
+Anzahl Fehlgeschlagen Tests: 1
+Welche Tests sind Fehlgeschlagen: testSomething
+15:44:44 (Klasse geändert) 
+Anzahl Erfolgreiche Tests: 0
+Anzahl Fehlgeschlagen Tests: 1
+Welche Tests sind Fehlgeschlagen: testSomething
+15:45:01 (Klasse geändert) 
+Anzahl Erfolgreiche Tests: 0
+Anzahl Fehlgeschlagen Tests: 1
+Welche Tests sind Fehlgeschlagen: testSomething
+15:45:13 (Klasse geändert) 
+Anzahl Erfolgreiche Tests: 1
+Anzahl Fehlgeschlagen Tests: 0
+15:45:20 (Test geändert) 
+Anzahl Erfolgreiche Tests: 1
+Anzahl Fehlgeschlagen Tests: 0
+15:45:30 (Test geändert) 
+Anzahl Erfolgreiche Tests: 1
+Anzahl Fehlgeschlagen Tests: 0
+16:08:19 (Test geändert) 
+Anzahl Erfolgreiche Tests: 0
+Anzahl Fehlgeschlagen Tests: 1
+Welche Tests sind Fehlgeschlagen: testSomething
+16:08:26 (Test geändert) 
+Anzahl Erfolgreiche Tests: 0
+Anzahl Fehlgeschlagen Tests: 1
+Welche Tests sind Fehlgeschlagen: testSomething
+16:08:34 (Test geändert) 
+Anzahl Erfolgreiche Tests: 0
+Anzahl Fehlgeschlagen Tests: 1
+Welche Tests sind Fehlgeschlagen: testSomething
+16:08:39 (Klasse geändert) 
+Anzahl Erfolgreiche Tests: 0
+Anzahl Fehlgeschlagen Tests: 1
+Welche Tests sind Fehlgeschlagen: testSomething
+16:08:48 (Klasse geändert) 
+Anzahl Erfolgreiche Tests: 0
+Anzahl Fehlgeschlagen Tests: 1
+Welche Tests sind Fehlgeschlagen: testSomething
+16:17:57 (Test geändert) 
+Anzahl Erfolgreiche Tests: 0
+Anzahl Fehlgeschlagen Tests: 1
+Welche Tests sind Fehlgeschlagen: testSomething
+16:18:05 (Test geändert) 
+Anzahl Erfolgreiche Tests: 0
+Anzahl Fehlgeschlagen Tests: 1
+Welche Tests sind Fehlgeschlagen: testSomething
+16:19:05 (Test geändert) 
+Anzahl Erfolgreiche Tests: 0
+Anzahl Fehlgeschlagen Tests: 1
+Welche Tests sind Fehlgeschlagen: testSomething
+16:19:14 (Test geändert) 
+Anzahl Erfolgreiche Tests: 0
+Anzahl Fehlgeschlagen Tests: 1
+Welche Tests sind Fehlgeschlagen: testSomething

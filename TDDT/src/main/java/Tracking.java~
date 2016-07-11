@@ -4,15 +4,13 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-
-import javafx.scene.control.TextArea;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
 
 public class Tracking extends Application{
     private long test;
@@ -50,24 +48,14 @@ public class Tracking extends Application{
     }
 
 
-    
+    public static void logSchreiben(String output,boolean klasse) throws IOException {
+        SimpleDateFormat date=new SimpleDateFormat("HH:mm:ss");
+        String date1=date.format(new Date());
+        FileWriter file = new FileWriter("Log.txt",true);
+        if (klasse) {
+            file.append(date1+" (Klasse geändert) "+output+"\n");
 
-    public static void schreibeLog(String name, String output, TextArea testtxt) throws IOException {
-
-        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
-        String date = sdf.format(new Date());
-        FileWriter file = new FileWriter("Log"+name+".txt", true);
-        String klasseTest = "";
-        if(!testtxt.isDisabled()){
-            klasseTest = " (Test geaendert) ";
-        }
-        else{
-            klasseTest = " (Klasse geaendert) ";
-        }
-
-        file.append(date+klasseTest+": "+output+"\n");
+        }else file.append(date1+" (Test geändert) "+output+"\n");
         file.close();
-
     }
-
 }
