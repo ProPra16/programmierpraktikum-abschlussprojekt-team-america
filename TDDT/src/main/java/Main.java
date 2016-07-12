@@ -140,6 +140,7 @@ public class Main extends Application {
 
 
     public static void zuRot(){
+        stopper = System.currentTimeMillis();
         testtxt.setDisable(false);
         classtxt.setDisable(true);
         Rot.setDisable(true);
@@ -150,6 +151,7 @@ public class Main extends Application {
     }
 
     public void zuGruen(){
+        stopper = System.currentTimeMillis();
         classtxt.setDisable(false);
         testtxt.setDisable(true);
         Gruen.setDisable(true);
