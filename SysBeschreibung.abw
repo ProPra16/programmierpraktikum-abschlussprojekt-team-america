@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE abiword PUBLIC "-//ABISOURCE//DTD AWML 1.0 Strict//EN" "http://www.abisource.com/awml.dtd">
+<abiword template="false" xmlns:ct="http://www.abisource.com/changetracking.dtd" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:math="http://www.w3.org/1998/Math/MathML" xid-max="30" xmlns:dc="http://purl.org/dc/elements/1.1/" styles="unlocked" fileformat="1.1" xmlns:svg="http://www.w3.org/2000/svg" xmlns:awml="http://www.abisource.com/awml.dtd" xmlns="http://www.abisource.com/awml.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.9.1" xml:space="preserve" props="dom-dir:ltr; document-footnote-restart-section:0; document-endnote-type:numeric; document-endnote-place-enddoc:1; document-endnote-initial:1; lang:de-DE; document-endnote-restart-section:0; document-footnote-restart-page:0; document-footnote-type:numeric; document-footnote-initial:1; document-endnote-place-endsection:0">
+<!-- ======================================================================== -->
+<!-- This file is an AbiWord document.                                        -->
+<!-- AbiWord is a free, Open Source word processor.                           -->
+<!-- More information about AbiWord is available at http://www.abisource.com/ -->
+<!-- You should not edit this file by hand.                                   -->
+<!-- ======================================================================== -->
+
+<metadata>
+<m key="abiword.date_last_changed">Mon Jul 11 22:32:52 2016
+</m>
+<m key="abiword.generator">AbiWord</m>
+<m key="dc.creator">Morris</m>
+<m key="dc.date">Mon Jul 11 22:32:52 2016
+</m>
+<m key="dc.format">application/x-abiword</m>
+</metadata>
+<rdf>
+</rdf>
+<history version="1" edit-time="3494" last-saved="1468269172" uid="8142f17c-479e-11e6-8eba-da9ada1cc8e3">
+<version id="1" started="1468269172" uid="a435be46-47a6-11e6-8eba-da9ada1cc8e3" auto="0" top-xid="30"/>
+</history>
+<styles>
+<s type="P" name="Heading 1" basedon="Normal" followedby="Normal" props="keep-with-next:1; margin-top:22pt; font-weight:bold; margin-bottom:3pt; font-family:Liberation Sans; font-size:17pt"/>
+<s type="P" name="Normal" followedby="Current Settings" props="font-family:Times New Roman; margin-top:0pt; color:000000; margin-left:0pt; text-position:normal; widows:2; font-style:normal; text-indent:0in; font-variant:normal; font-weight:normal; margin-right:0pt; font-size:12pt; text-decoration:none; margin-bottom:0pt; line-height:1.0; bgcolor:transparent; text-align:left; font-stretch:normal"/>
+<s type="P" name="Heading 2" basedon="Normal" followedby="Normal" props="keep-with-next:1; margin-top:22pt; font-weight:bold; margin-bottom:3pt; font-family:Liberation Sans; font-size:14pt"/>
+<s type="P" name="Heading 3" basedon="Normal" followedby="Normal" props="keep-with-next:1; margin-top:22pt; font-weight:bold; margin-bottom:3pt; font-family:Liberation Sans; font-size:12pt"/>
+</styles>
+<pagesize pagetype="A4" orientation="portrait" width="210.000000" height="297.000000" units="mm" page-scale="1.000000"/>
+<section xid="10" props="page-margin-footer:0.5000in; page-margin-header:0.5000in; page-margin-right:1.0000in; page-margin-left:1.0000in; page-margin-top:1.0000in; page-margin-bottom:1.0000in">
+<p style="Heading 1" xid="11"><c>Systembeschreibung</c></p>
+<p style="Normal" xid="1"><c></c></p>
+<p style="Heading 2" xid="2"><c props="list-tag:1003"></c>XMLKatalog.java</p>
+<p style="Normal" xid="5">Klasse, um die .xml-Datei, die in der die Aufgaben stehen im Programm nutzbar zu machen</p>
+<p style="Normal" xid="6"><c></c></p>
+<p style="Heading 3" xid="7" props="font-family:DejaVu Sans Mono; bgcolor:ffffff; font-size:9pt; color:000000; text-decoration:none; text-position:normal; font-weight:normal; font-style:normal"><c props="font-family:DejaVu Sans Mono; bgcolor:ffffff; font-size:9pt; color:000080; text-decoration:none; text-position:normal; font-weight:bold; font-style:normal">public </c><c props="font-family:DejaVu Sans Mono; bgcolor:ffffff; font-size:9pt; color:000000; text-decoration:none; text-position:normal; font-weight:normal; font-style:normal">XMLKatalog(String katalogname)</c></p>
+<p style="Normal" xid="21"><c>Konstruktor, der den Dateinamen einer .xml-Datei als String übergeben bekommt.</c></p>
+<p style="Normal" xid="13"><c></c></p>
+<p style="Normal" xid="8" props="font-family:DejaVu Sans Mono; bgcolor:ffffff; font-size:9pt; color:000000; text-decoration:none; text-position:normal; font-weight:normal; font-style:normal"><c props="font-family:DejaVu Sans Mono; bgcolor:ffffff; font-size:9pt; color:000080; text-decoration:none; text-position:normal; font-weight:bold; font-style:normal">public </c><c props="font-family:DejaVu Sans Mono; bgcolor:ffffff; font-size:9pt; color:000000; text-decoration:none; text-position:normal; font-weight:normal; font-style:normal">ArrayList&lt;String&gt; getTitles()</c></p>
+<p style="Normal" xid="22" props="font-family:DejaVu Sans Mono; bgcolor:ffffff; font-size:9pt; color:000000; text-decoration:none; text-position:normal; font-weight:normal; font-style:normal"><c props="font-family:Times New Roman; color:000000; text-decoration:none; text-position:normal; font-size:12pt; bgcolor:ffffff; font-weight:normal; font-style:normal">Liefert die Titel der Aufgaben in einem XMLKatalog-Objekt als ArrayList zurück.</c></p>
+<p style="Normal" xid="23" props="font-family:DejaVu Sans Mono; bgcolor:ffffff; font-size:9pt; color:000000; text-decoration:none; text-position:normal; font-weight:normal; font-style:normal"><c props="font-family:DejaVu Sans Mono; color:000000; font-size:9pt; text-position:normal; text-decoration:none; bgcolor:ffffff; font-weight:normal; font-style:normal"></c></p>
+<p style="Normal" xid="14" props="font-family:DejaVu Sans Mono; bgcolor:ffffff; font-size:9pt; color:000000; text-decoration:none; text-position:normal; font-weight:normal; font-style:normal"><c props="font-family:DejaVu Sans Mono; bgcolor:ffffff; font-size:9pt; color:000000; text-decoration:none; text-position:normal; font-weight:normal; font-style:normal"></c></p>
+<p style="Normal" xid="9" props="font-family:DejaVu Sans Mono; bgcolor:ffffff; font-size:9pt; color:000000; text-decoration:none; text-position:normal; font-weight:normal; font-style:normal"><c props="font-family:DejaVu Sans Mono; bgcolor:ffffff; font-size:9pt; color:000080; text-decoration:none; text-position:normal; font-weight:bold; font-style:normal">public </c><c props="font-family:DejaVu Sans Mono; bgcolor:ffffff; font-size:9pt; color:000000; text-decoration:none; text-position:normal; font-weight:normal; font-style:normal">String erstelleJava(</c><c props="font-family:DejaVu Sans Mono; bgcolor:ffffff; font-size:9pt; color:000080; text-decoration:none; text-position:normal; font-weight:bold; font-style:normal">boolean </c><c props="font-family:DejaVu Sans Mono; bgcolor:ffffff; font-size:9pt; color:000000; text-decoration:none; text-position:normal; font-weight:normal; font-style:normal">isATest, </c><c props="font-family:DejaVu Sans Mono; bgcolor:ffffff; font-size:9pt; color:000080; text-decoration:none; text-position:normal; font-weight:bold; font-style:normal">int </c><c props="font-family:DejaVu Sans Mono; bgcolor:ffffff; font-size:9pt; color:000000; text-decoration:none; text-position:normal; font-weight:normal; font-style:normal">aufgabennummer)</c></p>
+<p style="Normal" xid="24"><c>Erstellt eine .java-Datei, in die das Programmgerüst aus dem XMLKatalog geladen wird. Um das richtige Gerüst zu laden, wird die Aufgabennummer angegeben und zusätzlich, ob das Gerüst ein Test ist oder nicht. Mit diesen Informationen können die richtigen Informationen im Katalog gefunden werden.</c></p>
+<p style="Normal" xid="15" props="font-family:DejaVu Sans Mono; bgcolor:ffffff; font-size:9pt; color:000000; text-decoration:none; text-position:normal; font-weight:normal; font-style:normal"><c props="font-family:DejaVu Sans Mono; bgcolor:ffffff; font-size:9pt; color:000000; text-decoration:none; text-position:normal; font-weight:normal; font-style:normal"></c></p>
+<p style="Normal" xid="12" props="font-family:DejaVu Sans Mono; bgcolor:ffffff; font-size:9pt; color:000000; text-decoration:none; text-position:normal; font-weight:normal; font-style:normal"><c props="font-family:DejaVu Sans Mono; bgcolor:ffffff; font-size:9pt; color:000080; text-decoration:none; text-position:normal; font-weight:bold; font-style:normal">public int </c><c props="font-family:DejaVu Sans Mono; bgcolor:ffffff; font-size:9pt; color:000000; text-decoration:none; text-position:normal; font-weight:normal; font-style:normal">findeEintragnummer(String titel)</c></p>
+<p style="Normal" xid="16"><c props="list-tag:1005">Diese Methode bekommt den Titel einer Aufgabe und returnt die dazu korrespondierende Aufgabennummer im XMLKatalog.</c></p>
+<p style="Normal" xid="17" props="font-family:DejaVu Sans Mono; bgcolor:ffffff; font-size:9pt; color:000000; text-decoration:none; text-position:normal; font-weight:normal; font-style:normal"><c props="font-family:DejaVu Sans Mono; bgcolor:ffffff; font-size:9pt; color:000000; text-decoration:none; text-position:normal; font-weight:normal; font-style:normal"></c></p>
+<p style="Heading 1" xid="19"><c>Tracking.java</c></p>
+<p style="Normal" xid="20"><c>Hier sind die Methoden des Features „Tracking“ implementiert.</c></p>
+<p style="Normal" xid="26"><c></c></p>
+<p style="Normal" xid="27"><c props="font-family:DejaVu Sans Mono; bgcolor:ffffff; font-size:9pt; color:000080; text-decoration:none; text-position:normal; font-weight:bold; font-style:normal">public static void </c><c props="font-family:DejaVu Sans Mono; bgcolor:ffffff; font-size:9pt; color:000000; text-decoration:none; text-position:normal; font-weight:normal; font-style:normal">schreibeLog(String name, String output, TextArea testtxt)</c></p>
+<p style="Normal" xid="28"><c props="list-tag:1007">Die Methode bekommt den Namen einer Klasse, einen String, in dem die Informationen eines Log-Eintrags stehen und eine TextArea übergeben. Anhand der TextArea kann erkannt werden, ob ein Test oder eine Klasse geändert wurde.</c></p>
+<p style="Normal" xid="30"><c props="list-tag:1007">Die Methode schreibt einen Log-Eintrag mit Zeitangabe in eine bestehende Datei oder erstellt ansonsten diese Datei erst.</c></p>
+<p style="Heading 1" xid="18" props="font-family:DejaVu Sans Mono; bgcolor:ffffff; font-size:9pt; color:000000; text-decoration:none; text-position:normal; font-weight:normal; font-style:normal"><c></c></p>
+</section>
+</abiword>
