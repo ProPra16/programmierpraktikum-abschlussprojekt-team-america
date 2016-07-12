@@ -11,3 +11,62 @@ Anzahl Fehlgeschlagen Tests: 0
 Anzahl Erfolgreiche Tests: 1
 Anzahl Fehlgeschlagen Tests: 0
 
+17:18:37 (Test geaendert) : 
+Anzahl Erfolgreiche Tests: 0
+Anzahl Fehlgeschlagen Tests: 1
+Welche Tests sind Fehlgeschlagen: testSomething
+
+17:18:46 (Klasse geaendert) : 
+Anzahl Erfolgreiche Tests: 0
+Anzahl Fehlgeschlagen Tests: 1
+Welche Tests sind Fehlgeschlagen: testSomething
+
+17:19:13 (Klasse geaendert) : 
+Anzahl Erfolgreiche Tests: 1
+Anzahl Fehlgeschlagen Tests: 0
+
+17:19:40 (Test geaendert) : 
+Anzahl Erfolgreiche Tests: 1
+Anzahl Fehlgeschlagen Tests: 0
+
+17:20:14 (Test geaendert) : 
+Anzahl Erfolgreiche Tests: 1
+Anzahl Fehlgeschlagen Tests: 0
+
+17:20:43 (Test geaendert) : 
+Anzahl Erfolgreiche Tests: 0
+Anzahl Fehlgeschlagen Tests: 1
+Welche Tests sind Fehlgeschlagen: testSomething
+
+17:20:50 (Klasse geaendert) : 
+Anzahl Erfolgreiche Tests: 0
+Anzahl Fehlgeschlagen Tests: 1
+Welche Tests sind Fehlgeschlagen: testSomething
+
+17:21:00 (Klasse geaendert) : 
+Anzahl Erfolgreiche Tests: 0
+Anzahl Fehlgeschlagen Tests: 1
+Welche Tests sind Fehlgeschlagen: testSomething
+
+17:22:11 (Klasse geaendert) : 
+Anzahl Erfolgreiche Tests: 0
+Anzahl Fehlgeschlagen Tests: 1
+Welche Tests sind Fehlgeschlagen: testSomething
+
+17:22:21 (Klasse geaendert) : 
+Anzahl Erfolgreiche Tests: 1
+Anzahl Fehlgeschlagen Tests: 0
+
+17:23:50 (Test geaendert) : 
+Anzahl Erfolgreiche Tests: 0
+Anzahl Fehlgeschlagen Tests: 1
+Welche Tests sind Fehlgeschlagen: testSomething
+
+17:24:09 (Klasse geaendert) : 
+Anzahl Erfolgreiche Tests: 1
+Anzahl Fehlgeschlagen Tests: 0
+
+17:24:30 (Klasse geaendert) : 
+Anzahl Erfolgreiche Tests: 1
+Anzahl Fehlgeschlagen Tests: 0
+

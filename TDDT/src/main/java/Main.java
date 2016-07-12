@@ -191,7 +191,7 @@ public class Main extends Application {
             }
 
             else{
-                if(state.getText().equals("Klasse")) {
+                if(state.getText().equals("Klasse")||state.getText().equals("Refactor")) {
                     refactor.setDisable(false);
                     Rot.setDisable(false);
                 }
