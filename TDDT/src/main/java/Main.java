@@ -40,6 +40,7 @@ public class Main extends Application {
     public static Label state;
     public static long testZeit;
     public static long klasseZeit;
+    public static long refactorZeit;
     public static long stopper;
     public static long differenz;
     @Override
@@ -107,6 +108,7 @@ public class Main extends Application {
         loadaufgabe.setOnAction(e->{
             klasseZeit = 0;
             testZeit = 0;
+            refactorZeit = 0;
             stopper = System.currentTimeMillis();
 
             int aktuelleAufgabe = aufgaben.findeEintragnummer(Katalog.getValue());
@@ -180,14 +182,14 @@ public class Main extends Application {
             //System.out.println("Anzahl Erfolgreiche Tests: " + res.getNumberOfSuccessfulTests());
             //System.out.println("Anzahl Fehlgeschlong Tests: " + res.getNumberOfFailedTests());
             if (res.getNumberOfFailedTests() != 0) {
-                if (res.getNumberOfFailedTests() == 1 && state.getText()=="Test"){
+                if (res.getNumberOfFailedTests() == 1 && state.getText().equals("Test")){
                     Gruen.setDisable(false);
                 }
                 output=output+"\nWelche Tests sind Fehlgeschlagen: ";
             }
 
             else{
-                if(state.getText()=="Klasse") {
+                if(state.getText().equals("Klasse")) {
                     refactor.setDisable(false);
                     Rot.setDisable(false);
                 }
@@ -205,26 +207,30 @@ public class Main extends Application {
         }
 
         Tracking.schreibeLog(klasseDateiname, output+refactorerror(cs, comres), testtxt);
+        zeitUpdate(state);
+        Tracking.zeichneDiagramm(klasseDateiname,testZeit, klasseZeit, refactorZeit);
+    }
 
-        if(testtxt.isDisabled()){
+    public static void zeitUpdate(Label state){
+        if(state.getText().equals("Klasse")){
             differenz = System.currentTimeMillis()-stopper;
             stopper = System.currentTimeMillis();
             klasseZeit = klasseZeit+differenz;
-            //System.out.println(klasseZeit);
-
+            //System.out.println("KLasse");
         }
-        else{
+        else if (state.getText().equals("Test")){
             differenz = System.currentTimeMillis()-stopper;
             stopper = System.currentTimeMillis();
             testZeit = testZeit+differenz;
-            //System.out.println(testZeit);
-
+            //System.out.println("Test");
+        }else if (state.getText().equals("Refactor")){
+            differenz = System.currentTimeMillis()-stopper;
+            stopper = System.currentTimeMillis();
+            refactorZeit = refactorZeit+differenz;
+            //System.out.println("refactor");
         }
-
-        Tracking.zeichneDiagramm(testZeit, klasseZeit);
-
-
     }
+
     public  String refactorerror(CompilationUnit[] cs,CompilerResult comres){
         String a="";
         for (CompilationUnit cu : cs){
