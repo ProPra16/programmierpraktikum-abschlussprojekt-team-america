@@ -77,7 +77,7 @@ public class Tracking extends Application{
                 WritableImage image = bc.snapshot(new SnapshotParameters(), null);
 
                 // TODO: probably use a file chooser here
-                File file = new File("Chart"+name+".png");
+                File file = new File("Tracking/"+"Chart"+name+".png");
 
                 try {
                     ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", file);
@@ -107,7 +107,7 @@ public class Tracking extends Application{
 
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
         String date = sdf.format(new Date());
-        FileWriter file = new FileWriter("Log"+name+".txt", true);
+        FileWriter file = new FileWriter("Tracking/"+"Log"+name+".txt", true);
         String klasseTest = "";
         if(!testtxt.isDisabled()){
             klasseTest = " (Test geaendert) ";

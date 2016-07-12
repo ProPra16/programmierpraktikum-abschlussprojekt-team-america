@@ -1,5 +1,0 @@
-14:32:23 (Test geaendert) : 
-Anzahl Erfolgreiche Tests: 0
-Anzahl Fehlgeschlagen Tests: 1
-Welche Tests sind Fehlgeschlagen: testSomething
-

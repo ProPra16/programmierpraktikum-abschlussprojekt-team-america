@@ -1,0 +1,13 @@
+16:04:14 (Test geaendert) : 
+Anzahl Erfolgreiche Tests: 0
+Anzahl Fehlgeschlagen Tests: 1
+Welche Tests sind Fehlgeschlagen: testSomething
+
+16:04:25 (Klasse geaendert) : 
+Anzahl Erfolgreiche Tests: 1
+Anzahl Fehlgeschlagen Tests: 0
+
+16:04:36 (Test geaendert) : 
+Anzahl Erfolgreiche Tests: 1
+Anzahl Fehlgeschlagen Tests: 0
+
