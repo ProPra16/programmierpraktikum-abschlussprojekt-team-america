@@ -70,3 +70,8 @@ Anzahl Fehlgeschlagen Tests: 0
 Anzahl Erfolgreiche Tests: 1
 Anzahl Fehlgeschlagen Tests: 0
 
+12:30:50 (Test geaendert) : 
+Anzahl Erfolgreiche Tests: 0
+Anzahl Fehlgeschlagen Tests: 1
+Welche Tests sind Fehlgeschlagen: testSomething
+
