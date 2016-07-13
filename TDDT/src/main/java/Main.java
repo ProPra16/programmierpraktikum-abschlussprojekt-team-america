@@ -1,12 +1,8 @@
 
 import javafx.application.Application;
-import javafx.beans.InvalidationListener;
-import javafx.collections.ListChangeListener;
-import javafx.collections.ObservableList;
-import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -15,14 +11,10 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import javafx.stage.Window;
 import vk.core.api.*;
 import vk.core.internal.InternalCompiler;
-import vk.core.internal.InternalResult;
-
+import javafx.scene.control.Slider;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Main extends Application {
@@ -43,6 +35,11 @@ public class Main extends Application {
     public static long refactorZeit;
     public static long stopper;
     public static long differenz;
+    public static Button babybutton;
+    public static double babyzeit=2;
+    public static Slider babyslider;
+    public static Timer tim;
+    public static TimerTask timertask;
     @Override
     public void start(Stage primaryStage) throws Exception{
         fenster=primaryStage;
@@ -72,6 +69,21 @@ public class Main extends Application {
             classtxt.setPrefColumnCount(50);
             classtxt.setPrefRowCount(30);
             classtxt.setDisable(true);
+        babybutton=new Button("Aktivieren");
+        babyslider=new Slider(1,3,2);
+        babyslider.setMajorTickUnit(1);//setze fest dass der Slider in 1er Schritten arbeitet 
+        babyslider.setShowTickLabels(true);
+       babyslider.setShowTickMarks(true);
+        babyslider.setMinorTickCount(0);
+        babyslider.setSnapToTicks(true);
+        babyslider.valueProperty().addListener(new ChangeListener() {
+
+            @Override
+            public void changed(ObservableValue arg0, Object arg1, Object arg2) {
+                babyzeit=babyslider.getValue();
+            }
+        });
+
 
         //lade den Katalog
         this.aufgaben = new XMLKatalog("Aufgabenkatalog.xml");
@@ -98,7 +110,7 @@ public class Main extends Application {
         HBox h1=new HBox(20);
         HBox h2=new HBox(20);
         h2.getChildren().addAll(Rot,Gruen);
-        menu.getChildren().addAll(Katalog,loadaufgabe,h2,refactor,saveclass,loadclass,savetest,loadtest,state,compile);
+        menu.getChildren().addAll(babyslider,babybutton,Katalog,loadaufgabe,h2,refactor,saveclass,loadclass,savetest,loadtest,state,compile);
         h1.getChildren().addAll(classtxt,menu,testtxt);
         aufbau.getChildren().addAll(h1);
         rot =new Scene(aufbau);
@@ -110,7 +122,6 @@ public class Main extends Application {
             testZeit = 0;
             refactorZeit = 0;
             stopper = System.currentTimeMillis();
-
             int aktuelleAufgabe = aufgaben.findeEintragnummer(Katalog.getValue());
             String testDateiname = aufgaben.erstelleJava(true, aktuelleAufgabe);
             klasseDateiname = aufgaben.erstelleJava(false, aktuelleAufgabe);
@@ -135,12 +146,35 @@ public class Main extends Application {
         Rot.setOnAction(e->{zuRot();});
         Gruen.setOnAction(e->{zuGruen();});
         refactor.setOnAction(e->{zuRefactor();});
+        babybutton.setOnAction(e->{Babytimer();});
     }
 
-
+    public static void Babytimer(){
+        tim=new Timer();
+        timertask = new TimerTask() {
+            @Override
+            public void run() {
+                LoadnSave.load(klasseDateiname, testtxt, true);
+                LoadnSave.load(klasseDateiname, classtxt, false);
+            }
+        };
+        tim.scheduleAtFixedRate(timertask,(long)babyzeit*1000*5, (long) babyzeit * 1000 * 5);
+    }
 
     public static void zuRot(){
         stopper = System.currentTimeMillis();
+
+        try{
+            System.out.println("addfef");
+            tim.scheduleAtFixedRate(timertask=new TimerTask() {
+                             @Override
+                             public void run() {
+                                 LoadnSave.load(klasseDateiname, testtxt, true);
+                                 LoadnSave.load(klasseDateiname, classtxt, false);
+                             }
+                         }
+                    , (long) babyzeit * 1000 * 5, (long) babyzeit * 1000 * 5);
+        }catch(NullPointerException e){}
         testtxt.setDisable(false);
         classtxt.setDisable(true);
         Rot.setDisable(true);
@@ -152,6 +186,17 @@ public class Main extends Application {
 
     public void zuGruen(){
         stopper = System.currentTimeMillis();
+
+        try{
+            tim.scheduleAtFixedRate(timertask=new TimerTask() {
+                             @Override
+                             public void run() {
+                                 LoadnSave.load(klasseDateiname, testtxt, true);
+                                 LoadnSave.load(klasseDateiname, classtxt, false);
+                             }
+                         }
+                    , (long) babyzeit * 1000 * 5, (long) babyzeit * 1000 * 5);
+        }catch(NullPointerException e){}
         classtxt.setDisable(false);
         testtxt.setDisable(true);
         Gruen.setDisable(true);
@@ -186,6 +231,7 @@ public class Main extends Application {
             if (res.getNumberOfFailedTests() != 0) {
                 if (res.getNumberOfFailedTests() == 1 && state.getText().equals("Test")){
                     Gruen.setDisable(false);
+                    timertask.cancel();
                 }
                 output=output+"\nWelche Tests sind Fehlgeschlagen: ";
             }
@@ -194,6 +240,7 @@ public class Main extends Application {
                 if(state.getText().equals("Klasse")||state.getText().equals("Refactor")) {
                     refactor.setDisable(false);
                     Rot.setDisable(false);
+                    timertask.cancel();
                 }
             }
             for (TestFailure fail : res.getTestFailures()) {
