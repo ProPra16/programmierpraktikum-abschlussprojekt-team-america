@@ -75,14 +75,12 @@ public class Tracking extends Application{
             @Override
             public void handle(ActionEvent event) {
                 WritableImage image = bc.snapshot(new SnapshotParameters(), null);
-
-                // TODO: probably use a file chooser here
                 File file = new File("Tracking/"+"Chart"+name+".png");
 
                 try {
                     ImageIO.write(SwingFXUtils.fromFXImage(image, null), "png", file);
                 } catch (IOException e) {
-                    // TODO: handle exception here
+             
                 }
             }
         });
