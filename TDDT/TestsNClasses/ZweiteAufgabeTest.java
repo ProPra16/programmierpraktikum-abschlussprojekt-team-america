@@ -12,6 +12,11 @@ public class ZweiteAufgabeTest {
 		int n= ZweiteAufgabe.mal2(2);
 		assertEquals(n,4);
 		}
+	@Test
+	public void testSomething2() {
+		int n= ZweiteAufgabe.mal2(4);
+		assertEquals(n,9);
+		}
 	}
 		
 	
