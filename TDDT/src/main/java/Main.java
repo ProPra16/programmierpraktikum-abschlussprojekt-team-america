@@ -109,10 +109,10 @@ public class Main extends Application {
 
         VBox menu=new VBox(20);
         HBox h1=new HBox(20);
-        HBox h2=new HBox(20);
-        h2.getChildren().addAll(Rot,Gruen);
+        //HBox h2=new HBox(20);
+        //h2.getChildren().addAll(Rot,Gruen);
         //menu.getChildren().addAll(babyslider,babybutton,Katalog,loadaufgabe,h2,refactor,saveclass,loadclass,savetest,loadtest,state,compile);
-        menu.getChildren().addAll(Katalog,loadaufgabe,babyslider,babybutton,h2,refactor,diagramm, state,compile);
+        menu.getChildren().addAll(Katalog,loadaufgabe,babyslider,babybutton,Rot,Gruen,refactor,diagramm, state,compile);
         h1.getChildren().addAll(classtxt,menu,testtxt);
         aufbau.getChildren().addAll(h1);
         rot =new Scene(aufbau);
