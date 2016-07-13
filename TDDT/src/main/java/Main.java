@@ -52,10 +52,11 @@ public class Main extends Application {
         Rot.setDisable(true);
         Gruen=new Button("Grün");
         Gruen.setDisable(true);
-        Button saveclass=new Button("Klasse Speichern");
-        Button loadclass=new Button("Klasse Laden");
-        Button savetest=new Button("Test Speichern");
-        Button loadtest=new Button("Laden");
+        //Button saveclass=new Button("Klasse Speichern");
+        //Button loadclass=new Button("Klasse Laden");
+        //Button savetest=new Button("Test Speichern");
+        //Button loadtest=new Button("Laden");
+        Button diagramm = new Button("Zeige Chart");
         refactor=new Button("Refactor");
         refactor.setDisable(true);
         state=new Label();
@@ -110,7 +111,8 @@ public class Main extends Application {
         HBox h1=new HBox(20);
         HBox h2=new HBox(20);
         h2.getChildren().addAll(Rot,Gruen);
-        menu.getChildren().addAll(babyslider,babybutton,Katalog,loadaufgabe,h2,refactor,saveclass,loadclass,savetest,loadtest,state,compile);
+        //menu.getChildren().addAll(babyslider,babybutton,Katalog,loadaufgabe,h2,refactor,saveclass,loadclass,savetest,loadtest,state,compile);
+        menu.getChildren().addAll(Katalog,loadaufgabe,babyslider,babybutton,h2,refactor,diagramm, state,compile);
         h1.getChildren().addAll(classtxt,menu,testtxt);
         aufbau.getChildren().addAll(h1);
         rot =new Scene(aufbau);
@@ -130,6 +132,10 @@ public class Main extends Application {
             zuRot();
             Gruen.setDisable(true);
             loadaufgabe.setDisable(true);
+            babybutton.setDisable(false);
+            try{
+                timertask.cancel();
+            }catch(Exception lol){}
 
         });
         compile.setOnAction(e->{String klasse=classtxt.getText();String testo=testtxt.getText();
@@ -138,15 +144,21 @@ public class Main extends Application {
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
+            LoadnSave.load(klasseDateiname,classtxt,false);
+            LoadnSave.load(klasseDateiname,testtxt,true);
         });
-        saveclass.setOnAction(e->LoadnSave.save(klasseDateiname,classtxt.getText(),false));
+        /*saveclass.setOnAction(e->LoadnSave.save(klasseDateiname,classtxt.getText(),false));
         loadclass.setOnAction(e->{System.out.println(klasseDateiname);LoadnSave.load(klasseDateiname,classtxt,false);});
         savetest.setOnAction(e->LoadnSave.save(klasseDateiname,testtxt.getText(),true));
-        loadtest.setOnAction(e->LoadnSave.load(klasseDateiname,testtxt,true));
+        loadtest.setOnAction(e->LoadnSave.load(klasseDateiname,testtxt,true));*/
+        diagramm.setOnAction(e ->Tracking.zeichneDiagramm(klasseDateiname,testZeit, klasseZeit, refactorZeit));
         Rot.setOnAction(e->{zuRot();});
         Gruen.setOnAction(e->{zuGruen();});
         refactor.setOnAction(e->{zuRefactor();});
-        babybutton.setOnAction(e->{Babytimer();});
+        babybutton.setOnAction(e->{
+            Babytimer();
+            babybutton.setDisable(true);
+        });
     }
 
     public static void Babytimer(){
@@ -158,7 +170,7 @@ public class Main extends Application {
                 LoadnSave.load(klasseDateiname, classtxt, false);
             }
         };
-        tim.scheduleAtFixedRate(timertask,(long)babyzeit*1000*5, (long) babyzeit * 1000 * 5);
+        tim.scheduleAtFixedRate(timertask,(long)babyzeit*1000*60, (long) babyzeit * 1000 * 60);
     }
 
     public static void zuRot(){
@@ -173,7 +185,7 @@ public class Main extends Application {
                                  LoadnSave.load(klasseDateiname, classtxt, false);
                              }
                          }
-                    , (long) babyzeit * 1000 * 5, (long) babyzeit * 1000 * 5);
+                    , (long) babyzeit * 1000 * 60, (long) babyzeit * 1000 * 60);
         }catch(NullPointerException e){}
         testtxt.setDisable(false);
         classtxt.setDisable(true);
@@ -195,7 +207,7 @@ public class Main extends Application {
                                  LoadnSave.load(klasseDateiname, classtxt, false);
                              }
                          }
-                    , (long) babyzeit * 1000 * 5, (long) babyzeit * 1000 * 5);
+                    , (long) babyzeit * 1000 * 60, (long) babyzeit * 1000 * 60);
         }catch(NullPointerException e){}
         classtxt.setDisable(false);
         testtxt.setDisable(true);
@@ -232,6 +244,7 @@ public class Main extends Application {
                 if (res.getNumberOfFailedTests() == 1 && state.getText().equals("Test")){
                     Gruen.setDisable(false);
                     timertask.cancel();
+                    LoadnSave.save(klasseDateiname,testtxt.getText(),true);
                 }
                 output=output+"\nWelche Tests sind Fehlgeschlagen: ";
             }
@@ -241,6 +254,7 @@ public class Main extends Application {
                     refactor.setDisable(false);
                     Rot.setDisable(false);
                     timertask.cancel();
+                    LoadnSave.save(klasseDateiname,classtxt.getText(),false);
                 }
             }
             for (TestFailure fail : res.getTestFailures()) {
@@ -257,7 +271,7 @@ public class Main extends Application {
 
         Tracking.schreibeLog(klasseDateiname, output+refactorerror(cs, comres), testtxt);
         zeitUpdate(state);
-        Tracking.zeichneDiagramm(klasseDateiname,testZeit, klasseZeit, refactorZeit);
+        //Tracking.zeichneDiagramm(klasseDateiname,testZeit, klasseZeit, refactorZeit);
     }
 
     public static void zeitUpdate(Label state){
