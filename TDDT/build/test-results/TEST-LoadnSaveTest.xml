@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="LoadnSaveTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-07-14T15:10:55" hostname="Awesomo" time="0.327">
+  <properties/>
+  <testcase name="test_SaveThenLoadClass" classname="LoadnSaveTest" time="0.324"/>
+  <testcase name="test_SaveThenLoadTest" classname="LoadnSaveTest" time="0.002"/>
+  <testcase name="test_filenotfoundsotextareawontchange" classname="LoadnSaveTest" time="0.001"/>
+  <system-out><![CDATA[java.io.FileNotFoundException: TestsNClasses\gibtesgarnicht.java (Das System kann die angegebene Datei nicht finden)]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

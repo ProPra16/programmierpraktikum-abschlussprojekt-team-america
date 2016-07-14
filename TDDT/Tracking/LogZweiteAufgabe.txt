@@ -167,3 +167,8 @@ Anzahl Erfolgreiche Tests: 1
 Anzahl Fehlgeschlagen Tests: 1
 Welche Tests sind Fehlgeschlagen: testSomething2
 
+14:57:26 (Test geaendert) : 
+Anzahl Erfolgreiche Tests: 1
+Anzahl Fehlgeschlagen Tests: 1
+Welche Tests sind Fehlgeschlagen: testSomething2
+
