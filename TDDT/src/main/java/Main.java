@@ -296,12 +296,18 @@ public class Main extends Application {
 
     public  String refactorerror(CompilationUnit[] cs,CompilerResult comres){
         String a="";
+        int count=0;
         for (CompilationUnit cu : cs){
             for(CompileError ce:comres.getCompilerErrorsForCompilationUnit(cu)){
+                count++;
                 a=a+'\n'+ce.getMessage();
-
             }
-
+            if(cu.isATest()&&count==1&&a.startsWith("\ncannot find symbol")&&a.endsWith("location: class "+klasseDateiname)){
+                Gruen.setDisable(false);
+                a=a+"\n Da die Methode fuer den nicht kompilierten Test noch nicht gegeben ist, duerfen Sie zum Bearbeiten der Klasse wechseln.";
+                a=a+"\n Fuegen Sie bitte die im Test gefordete Methode der Klasse hinzu!";
+                LoadnSave.save(klasseDateiname,testtxt.getText(),true);
+            }
         }
         System.out.println(a);
         return a;
